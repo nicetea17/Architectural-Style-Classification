@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+<style>
+    
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  padding-top:20px;
+  padding-bottom:0px;
+  padding-right:30px;
+  position: sticky;
+  top: 0;
+    grid-area: header;
+}
+.topnav a {
+  float: right;
+  color: #a29bb2;
+  text-align: center;
+  padding: 15px  50px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 0;
+}
+
+
+.menu:hover {
+	color:white;
+}
+.menu:hover::before {
+
+  transform: scaleX(1);
+}
+.menu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #b0a8c4;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+hr {
+  border-top: 3px solid #a29bb2;
+}
+.below{
+    visibility: hidden;
+  }
+
+* {
+    font-family: 'DM Sans';
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #5e5e5e;
+}
+
+.no-display {
+    display: none;
+}
+h1{
+font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+img {
+  border-radius:10%;
+}
+.center {
+    margin: auto;
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.title {
+    font-size: 3.5vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #5e5e5e;
+}
+
+.content {
+    margin-top: 2em;
+    font-size: 20px;
+}
+
+.analyze {
+    margin-top: 1em;
+}
+
+.upload-label {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.result-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.learn-more button {
+    height: 50px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #eae6f5;
+    font-size: 20px;
+    color: black;
+    margin-top: 1em;
+}
+
+button.choose-file-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    border:solid 1.5px #5e5e5e;
+    font-size: 20px;
+    color: #5e5e5e;
+}
+button.choose-file-button:hover {
+  background-color: #b0a8c4;
+  color: white;
+}
+
+button.analyze-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #b0a8c4;
+    border: 0px;
+    font-size: 20px;
+    color: white;
+}
+button.analyze-button:hover {
+  background-color: #746b8c;
+  color: white;
+}
+button:focus {
+    outline: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+.table-of-contents{
+    color:#a8a7a8;
+}
+#list {
+    font-size: 1.5vw;
+}
+
+details:hover {
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+    font-size: 1.5vw;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 90vw;
+    height: 20vw;
+    overflow: hidden;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.3vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #00000;
+    background-color:#b0a8c4;
+    padding-left:0px;
+}
+.container img {
+ width: 120vw;
+    height: 30vw;
+        margin: 0px -250px 0px -250px;
+        opacity: 0.75;
+    }
+    @media only screen and (max-width: 630px) {
+  .solid{
+    visibility: hidden;
+  }
+  }
+  @media only screen and (max-width: 557px) {
+  .topnav a { padding:20px 35px 20px 35px;}
+  }
+  @media only screen and (max-width: 477px) {
+  .topnav a { padding:20px 20px 20px 20px;}
+}
+ </style>
+    
+        <script src='../static/client.js'></script>
+</head>
+<body>
+    <title>Learn More About Architecture Styles</title>
+    <div class="topnav">
+
+        <a onclick="explore()" class="menu">Explore</a>
+        <a onclick="classifypage()" class="menu">Classify</a>
+        <a onclick="home()" class="menu">Home</a>
+<hr class="solid">
+</div>
+    <div class="center">
+        <h1>Learn More About Architecture Styles</h1> 
+        <hr style ="width:60%;"><br>
+
+        <div id="table-of-contents">
+             <details>
+            <summary>Table of Contents</summary>
+            <ul>
+                <li><a href="#american-craftsman-style">American Craftsman</a></li>
+                <li><a href="#bauhaus-architecture">Bauhaus</a></li>
+                <li><a href="#palladian-architecture">Palladian</a></li>
+                <li><a href="#deconstructivism">Deconstructivism</a></li>
+                <li><a href="#georgian-architecture">Georgian</a></li>
+                <li><a href="#romanesque-architecture">Romanesque</a></li>
+                <li><a href="#greek-revival-architecture">Greek Revival</a></li>
+                <li><a href="#american-foursquare-architecture">American Foursquare</a></li>
+                <li><a href="#byzantine-architecture">Byzantine</a></li>
+                <li><a href="#postmodern-architecture">Postmodern</a></li>
+                <li><a href="#art-nouveau-architecture">Art Nouveau</a></li>
+                <li><a href="#art-deco-architecture">Art Deco</a></li>
+                <li><a href="#russian-revival-architecture">Russian Revival</a></li>
+                <li><a href="#edwardian-architecture">Edwardian</a></li>
+                <li><a href="#achaemenid-architecture">Achaemenid</a></li>
+                <li><a href="#novelty-architecture">Novelty</a></li>
+                <li><a href="#baroque-architecture">Baroque</a></li>
+                <li><a href="#colonial-architecture">Colonial</a></li>
+                <li><a href="#ancient-egyptian-architecture">Ancient Egyptian</a></li>
+                <li><a href="#tudor-revival-architecture">Tudor Revival</a></li>
+                <li><a href="#queen-anne-architecture">Queen Anne</a></li>
+                <li><a href="#chicago-school-architecture">Chicago School</a></li>
+                <li><a href="#gothic-architecture">Gothic</a></li>
+                <li><a href="#international-style">International</a></li>
+                <li><a href="#beaux-arts-architecture">Beaux-Arts</a></li>
+            </ul>
+         </details>
+        </div>
+
+        <div id="content">
+            <h2 id="american-craftsman-style">American Craftsman</h2>
+            <p><strong>Time Period:</strong> Late 19th – early 20th century</p>
+            <p><strong>Concept:</strong> Emphasizes handcrafted materials and simplicity, reacting against industrial mass production.</p>
+            <p><strong>Features:</strong> Exposed beams, built-in furniture, overhanging eaves, and wood or stone detailing.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/am1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/am2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/am3.jpg?raw=true" height="200">
+
+
+            <h2 id="bauhaus-architecture"><br><br>Bauhaus</h2>
+            <p><strong>Time Period:</strong> 1919–1933</p>
+            <p><strong>Concept:</strong> "Form follows function"—prioritizing efficiency, minimalism, and mass production.</p>
+            <p><strong>Features:</strong> Flat roofs, glass and steel facades, geometric forms, and open interiors.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bau1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bau2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bau3.jpg?raw=true" height="200">
+
+            <h2 id="palladian-architecture"><br><br>Palladian</h2>
+            <p><strong>Time Period:</strong> 16th–18th century</p>
+            <p><strong>Concept:</strong> Inspired by ancient Roman and Greek architecture, emphasizing symmetry and harmony.</p>
+            <p><strong>Features:</strong> Classical columns, porticos, domes, and grand entrances.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pa1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pa2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pa3.jpg?raw=true" height="200">
+
+            <h2 id="deconstructivism"><br><br>Deconstructivism</h2>
+            <p><strong>Time Period:</strong> Late 20th century – present</p>
+            <p><strong>Concept:</strong> Challenges traditional architecture by embracing irregularity and unpredictability.</p>
+            <p><strong>Features:</strong> Fragmented shapes, tilted walls, asymmetrical facades, and distorted forms.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/de1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/de2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/de3.jpg?raw=true" height="200">
+
+            <h2 id="georgian-architecture"><br><br>Georgian</h2>
+            <p><strong>Time Period:</strong> 1714–1830</p>
+            <p><strong>Concept:</strong> Based on Renaissance principles, emphasizing balance, proportion, and symmetry.</p>
+            <p><strong>Features:</strong> Brick facades, symmetrical layouts, and sash windows.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ge1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ge2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ge3.jpg?raw=true" height="200">
+
+            <h2 id="romanesque-architecture"><br><br>Romanesque</h2>
+            <p><strong>Time Period:</strong> 10th–12th century</p>
+            <p><strong>Concept:</strong> A fortress-like style focused on strength, durability, and religious significance.</p>
+            <p><strong>Features:</strong> Thick stone walls, rounded arches, barrel vaults, and small windows.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ro1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ro2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ro3.jpg?raw=true" height="200">
+
+            <h2 id="greek-revival-architecture"><br><br>Greek Revival</h2>
+            <p><strong>Time Period:</strong> Early–mid 19th century</p>
+            <p><strong>Concept:</strong> Inspired by ancient Greek democracy and culture, symbolizing civic pride.</p>
+            <p><strong>Features:</strong> Tall columns, triangular pediments, and white marble facades.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/gr1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/gr2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/gr3.jpg?raw=true" height="200">
+
+            <h2 id="american-foursquare-architecture"><br><br>American Foursquare</h2>
+            <p><strong>Time Period:</strong> Early 20th century (1890s–1930s)</p>
+            <p><strong>Concept:</strong> A response to Victorian excess, featuring practical layouts and simplified exteriors.</p>
+            <p><strong>Features:</strong> Boxy shape, hipped roof, large front porch, and four-room floor plans on each story.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/amf1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/amf2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/amf3.jpg?raw=true" height="200">
+
+            <h2 id="byzantine-architecture"><br><br>Byzantine</h2>
+            <p><strong>Time Period:</strong> 4th–15th century (peaking in the 6th century)</p>
+            <p><strong>Concept:</strong> Merged Roman engineering with Greek and Middle Eastern influences, primarily for Christian empire building.</p>
+            <p><strong>Features:</strong> Domes on pendentives, lavish mosaics, round arches, and centralized church plans.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/by1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/by2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/by3.jpg?raw=true" height="200">
+
+            <h2 id="postmodern-architecture"><br><br>Postmodern</h2>
+            <p><strong>Time Period:</strong> Mid-20th century – present (1970s onward)</p>
+            <p><strong>Concept:</strong> Rejects modernist austerity by mixing historical references, ornamentation, and playful design.</p>
+            <p><strong>Features:</strong> Eclectic forms, bright colors, irony, and a blend of traditional and contemporary elements.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pm1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pm2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/pm3.JPG?raw=true" height="200">
+
+            <h2 id="art-nouveau-architecture"><br><br>Art Nouveau</h2>
+            <p><strong>Time Period:</strong> Late 19th – early 20th century (c. 1890–1910)</p>
+            <p><strong>Concept:</strong> Embraced organic, flowing lines, rejecting strict historicism and emphasizing nature-inspired motifs.</p>
+            <p><strong>Features:</strong> Whiplash curves, floral patterns, asymmetrical shapes, and extensive use of iron and glass.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/an1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/an2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/an3.JPG?raw=true" height="200">
+
+            <h2 id="art-deco-architecture"><br><br>Art Deco</h2>
+            <p><strong>Time Period:</strong> 1920s–1930s</p>
+            <p><strong>Concept:</strong> Celebrated modernity, technology, and luxury through streamlined forms and bold ornamentation.</p>
+            <p><strong>Features:</strong> Geometric patterns, zigzags, sunbursts, symmetry, and stylized motifs.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ad1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ad2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ad3.jpg?raw=true" height="200">
+
+            <h2 id="russian-revival-architecture"><br><br>Russian Revival</h2>
+            <p><strong>Time Period:</strong> Mid-19th – early 20th century</p>
+            <p><strong>Concept:</strong> Romantic nationalism that revived medieval Russian forms—often for churches or civic buildings.</p>
+            <p><strong>Features:</strong> Onion domes, tented roofs, kokoshnik arches, decorative brick patterns, and colorful exteriors.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/rr1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/rr2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/rr3.jpg?raw=true" height="200">
+
+            <h2 id="edwardian-architecture"><br><br>Edwardian</h2>
+            <p><strong>Time Period:</strong> 1901–1910 (extended to 1914 by some historians)</p>
+            <p><strong>Concept:</strong> Lighter, simpler style than Victorian, reflecting a shift toward more relaxed social norms.</p>
+            <p><strong>Features:</strong> Subdued ornamentation, pastel color schemes, larger windows, and partial classical detailing.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ed1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ed2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ed3.jpg?raw=true" height="200">
+
+            <h2 id="achaemenid-architecture"><br><br>Achaemenid</h2>
+            <p><strong>Time Period:</strong> 550–330 BC</p>
+            <p><strong>Concept:</strong> Monumental Persian style designed for royal grandeur and imperial authority (e.g., Persepolis).</p>
+            <p><strong>Features:</strong> Hypostyle halls, tall columns with bull or lion capitals, relief sculptures, and vast terraces.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ac1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ac2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ac3.jpg?raw=true" height="200">
+
+
+            <h2 id="novelty-architecture"><br><br>Novelty</h2>
+            <p><strong>Time Period:</strong> Mid-20th century – present</p>
+            <p><strong>Concept:</strong> Known as "duck" or "programmatic" architecture, often shaped like objects for attention or humor.</p>
+            <p><strong>Features:</strong> Buildings mimicking objects (giant coffee pot, hotdog stand), bold signage, playful or whimsical designs.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/no1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/no2.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/no3.jpg?raw=true" height="200">
+
+            <h2 id="baroque-architecture"><br><br>Baroque</h2>
+            <p><strong>Time Period:</strong> Early 17th – mid-18th century</p>
+            <p><strong>Concept:</strong> Dramatic and richly ornamented style conveying power and religious intensity, often tied to the Counter-Reformation.</p>
+            <p><strong>Features:</strong> Curving lines, elaborate scrolls, domes, dynamic facades, and bold contrasts of light and shadow.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bar1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bar2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/bar3.JPG?raw=true" height="200">
+
+            <h2 id="colonial-architecture"><br><br>Colonial</h2>
+            <p><strong>Time Period:</strong> 16th–19th century (varies by region)</p>
+            <p><strong>Concept:</strong> European powers adapting their homeland designs to new climates and resources in the colonies.</p>
+            <p><strong>Features:</strong> Symmetrical facades, central doors, multi-pane windows, simple massing, references to “mother country” styles.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/co1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/co2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/co3.jpg?raw=true" height="200">
+
+            <h2 id="ancient-egyptian-architecture"><br><br>Ancient Egyptian</h2>
+            <p><strong>Time Period:</strong> c. 3100 BC – 30 BC</p>
+            <p><strong>Concept:</strong> Monumental stone architecture aimed at eternity, reflecting religious beliefs in afterlife and divinity.</p>
+            <p><strong>Features:</strong> Massive pyramids, thick sloping walls, columns with lotus/papyrus capitals, relief carvings, hieroglyphics.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ae1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ae2.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ae3.jpg?raw=true" height="200">
+
+
+            <h2 id="tudor-revival-architecture"><br><br>Tudor Revival</h2>
+            <p><strong>Time Period:</strong> Late 19th – early 20th century</p>
+            <p><strong>Concept:</strong> Nostalgic recreation of English Tudor styles with medieval-inspired detailing.</p>
+            <p><strong>Features:</strong> Half-timbered exteriors, steeply pitched roofs, prominent chimneys, and leaded windows.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/tr1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/tr2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/tr3.jpg?raw=true" height="200">
+
+            <h2 id="queen-anne-architecture"><br><br>Queen Anne</h2>
+            <p><strong>Time Period:</strong> 1870s–1910 (varies regionally)</p>
+            <p><strong>Concept:</strong> A Victorian-era style that embraced variety and ornamentation to showcase wealth and creativity.</p>
+            <p><strong>Features:</strong> Asymmetrical facades, turrets or towers, wraparound porches, spindle work, and abundant decorative trim.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/qa1.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/qa2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/qa3.JPG?raw=true" height="200">
+
+            <h2 id="chicago-school-architecture"><br><br>Chicago School</h2>
+            <p><strong>Time Period:</strong> Late 19th – early 20th century</p>
+            <p><strong>Concept:</strong> Early skyscraper style pioneering steel-frame construction and functional commercial design.</p>
+            <p><strong>Features:</strong> Steel skeletons, large plate glass windows, minimal ornament, and emphasis on vertical lines.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/cs1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/cs2.JPG?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/cs3.jpg?raw=true" height="200">
+
+            <h2 id="gothic-architecture"><br><br>Gothic</h2>
+            <p><strong>Time Period:</strong> 12th–16th century</p>
+            <p><strong>Concept:</strong> Intended to evoke awe through soaring spaces and elaborate decorative elements in churches and cathedrals.</p>
+            <p><strong>Features:</strong> Pointed arches, flying buttresses, ribbed vaults, and stained glass windows.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/go1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/go2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/go3.jpg?raw=true" height="200">
+
+            <h2 id="international-style"><br><br>International</h2>
+            <p><strong>Time Period:</strong> 1920s–present</p>
+            <p><strong>Concept:</strong> A universal, functional style rejecting ornamentation in favor of simplicity and modern materials.</p>
+            <p><strong>Features:</strong> Steel and glass exteriors, open floor plans, flat roofs, and minimal decorative elements.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/is1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/is2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/is3.jpg?raw=true" height="200">
+
+            <h2 id="beaux-arts-architecture"><br><br>Beaux-Arts</h2>
+            <p><strong>Time Period:</strong> Late 19th – early 20th century</p>
+            <p><strong>Concept:</strong> A grand, academic style blending Renaissance and Baroque influences with an emphasis on symmetry and grandeur.</p>
+            <p><strong>Features:</strong> Monumental stairways, classical details, domes, sculptural ornamentation, and richly decorated interiors.</p>
+            <strong>Examples:</strong><br><br>
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ba1.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ba2.jpg?raw=true" height="200">
+            <img src="https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/ba3.JPG?raw=true" height="200">
+
+        </div>
+
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const style = params.get("style");
+            if (style) {
+                const sectionId = style.toLowerCase().replace(/\s+/g, '-');
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

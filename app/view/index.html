@@ -1,0 +1,304 @@
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+<style>
+    
+.topnav {
+  overflow: hidden;
+  background-color: transparent;
+  padding-top:20px;
+  padding-bottom:0px;
+  padding-right:30px;
+  position: sticky;
+  top: 0;
+    grid-area: header;
+}
+.topnav a {
+  float: right;
+  color: #a29bb2;
+  text-align: center;
+  padding: 15px  50px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 0;
+}
+
+
+.menu:hover {
+	color:white;
+}
+.menu:hover::before {
+
+  transform: scaleX(1);
+}
+.menu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #b0a8c4;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+hr {
+  border-top: 3px solid #a29bb2;
+}
+.below{
+    visibility: hidden;
+  }
+
+
+* {
+    font-family: 'DM Sans';
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #5e5e5e;
+    font-size:15px;
+}
+
+.no-display {
+    display: none;
+}
+h1{
+font-size: 50px;
+}
+h2 {
+  font-size: 30px;
+}
+img {
+  border-radius:10%;
+}
+.center {
+    margin: auto;
+
+    text-align: center;
+    font-size: 16px;
+}
+
+.content {
+    margin-top: 2em;
+    font-size: 20px;
+}
+
+.analyze {
+    margin-top: 1em;
+}
+
+.upload-label {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.result-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.learn-more button {
+    height: 50px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #eae6f5;
+    font-size: 20px;
+    color: black;
+    margin-top: 1em;
+}
+
+button.choose-file-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: transparent;
+    border:solid 1.5px #5e5e5e;
+    font-size: 20px;
+    color: #5e5e5e;
+}
+button.choose-file-button:hover {
+  background-color: #b0a8c4;
+  color: white;
+}
+
+button.analyze-button {
+    width: 220px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #b0a8c4;
+    border: 0px;
+    font-size: 20px;
+    color: white;
+}
+button.analyze-button:hover {
+  background-color: #746b8c;
+  color: white;
+}
+button:focus {
+    outline: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+.table-of-contents{
+    color:#a8a7a8;
+}
+#list {
+    font-size: 15px;
+}
+
+details:hover {
+    cursor: pointer;
+}
+
+ul li {
+    list-style: none;
+    font-size: 15px;
+    transform: translate(0%, -200%);
+}
+    
+.hero-image {
+  background-image: linear-gradient(rgba(194,185, 209, 0.5), rgba(194,185, 209, 0.4)), url("https://github.com/veronicalee7/architectural-style-recognition/blob/master/app/view/871d43b9-ba32-46b4-8517-de1dbb9d94a5.jpg?raw=true");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+      height: 20vw;
+    overflow: hidden;
+}
+.hero-text {
+  text-align: center;
+    position: relative;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  z-index: 2;
+  font-size: 33px;
+  color: white;
+  background-color: rgba(194, 185, 209, 0.8);
+    width: 50%;
+  padding: 10px;
+
+}
+@media only screen and (max-width: 899px) {
+  .topnav {grid-area: 1 / span 3;}  
+  .hero-text{width:auto;}
+  
+}
+@media only screen and (max-width: 630px) {
+  .solid{
+    visibility: hidden;
+  }
+  .below{
+    visibility: visible;
+  }
+  .hero-text{  transform: translate(-50%, -100%);
+}
+}
+@media only screen and (max-width: 548px) {
+  .topnav a { padding:20px 35px 20px 35px;}
+}
+@media only screen and (max-width: 471px) {
+  .topnav a { padding:20px 20px 20px 20px;}
+  .hero-text{font-size:25px;}
+}
+
+
+ </style>
+ <script src='../static/client.js'></script>
+    </head>
+    <body>
+        <div class="topnav">
+
+        <a onclick="explore()" class="menu">Explore</a>
+        <a onclick="classifypage()" class="menu">Classify</a>
+        <a onclick="home()" class="menu">Home</a>
+<hr class="solid">
+</div>
+<hr class="below">
+
+        <div>
+        <div class="hero-image"></div>
+  <div class="hero-text">
+Classify Architecture Images
+    </div>
+    
+            <div class='center'>
+             <p style="transform: translate(0%, -200%);">The following styles are valid within this website:</p>
+           
+                <div id='list'>
+                   
+                    <details>
+                        <summary style=" transform: translate(0%, -200%);">Architecture styles</summary>
+                        <ul style="font-size:15px;" >
+                            <li>American craftsman</li>
+                            <li>Bauhaus</li>
+                            <li>Palladian</li>
+                            <li>Deconstructivism</li>
+                            <li>Georgian</li>
+                            <li>Romanesque</li>
+                            <li>Greek Revival</li>
+                            <li>American Foursquare</li>
+                            <li>Byzantine</li>
+                            <li>Postmodern</li>
+                            <li>Art Nouveau</li>
+                            <li>Art Deco</li>
+                            <li>Russian Revival</li>
+                            <li>Edwardian</li>
+                            <li>Achaemenid</li>
+                            <li>Novelty</li>
+                            <li>Baroque</li>
+                            <li>Colonial</li>
+                            <li>Ancient Egyptian</li>
+                            <li>Tudor Revival</li>
+                            <li>Queen Anne</li>
+                            <li>Chicago school</li>
+                            <li>Gothic</li>
+                            <li>International</li>
+                            <li>Beaux-Arts</li>
+                        </ul>
+                    </details>
+                </div>
+                <div class='content'>
+                    <div class='no-display'>
+                        <input id='file-input'
+                               class='no-display'
+                               type='file'
+                               name='file'
+                               accept='image/*'
+                               onchange='showPicked(this)'>
+                    </div>
+                    <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+                    <div class='upload-label'>
+                        <label id='upload-label'>No file chosen</label>
+                    </div>
+                    <div>
+                        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+                    </div>
+                    <div class='result-label'>
+                        <label id='result-label'></label>
+                    </div>
+                    <div class = 'learn-more'>
+                        <button id="learn-more" style="display: none;" type="button" onclick="redirectToLearnMore()">Learn More about this architecture style!</button>
+                    </div>
+                    <div class='analyze'>
+                        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
