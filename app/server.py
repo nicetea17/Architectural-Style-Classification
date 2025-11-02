@@ -8,6 +8,7 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+from pathlib import Path
 import os
 
 drive_api_key = os.environ.get("GOOGLE_API_KEY")
