@@ -8,8 +8,10 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+import os
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1-ypX1TjaLKM1Q6Hn2KQgqY9puoRMQaCn?alt=media&key= '#insert key
+drive_api_key = os.environ.get("GOOGLE_API_KEY")
+export_file_url = f"https://www.googleapis.com/drive/v3/files/1-ypX1TjaLKM1Q6Hn2KQgqY9puoRMQaCn?alt=media&key={drive_api_key}"
 export_file_name = 'export.pkl'
 
 classes = ['American craftsman style',
