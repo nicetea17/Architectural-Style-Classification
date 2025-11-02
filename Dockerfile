@@ -1,16 +1,18 @@
-# Base image with Python 3.9
-FROM python:3.9-slim-buster
+# Use a modern, supported base image (Bookworm = Debian 12)
+FROM python:3.11-slim-bookworm
+
+# Prevent interactive prompts during package install
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install system dependencies for Python packages
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
-    python3-dev \
     gcc \
+    gfortran \
     build-essential \
     libopenblas-dev \
     liblapack-dev \
     libatlas-base-dev \
-    gfortran \
     libfreetype6-dev \
     libpng-dev \
     pkg-config \
@@ -18,24 +20,24 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libffi-dev \
     libssl-dev \
-    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip to the latest version
-RUN pip install --upgrade pip
+# Upgrade pip
+RUN pip install --upgrade pip setuptools wheel
 
-# Install numpy first with a compatible version to avoid build issues
-RUN pip install numpy==1.23.5 --prefer-binary --no-cache-dir
+# Pre-install numpy (helps with scientific libs)
+RUN pip install numpy==1.26.4 --prefer-binary --no-cache-dir
 
-# Copy requirements file and install other dependencies
+# Copy requirements and install dependencies
 COPY requirements.txt .
-RUN pip install --prefer-binary --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --prefer-binary -r requirements.txt
 
-# Copy the application files
+# Copy the app
 COPY app app/
 
-# Expose the port used by the server
+# Expose Render port (optional for local dev)
 EXPOSE 5000
 
-# Run the application
-CMD ["python", "app/server.py", "serve"]
+# Start command — use host/port variables
+ENV PORT=5000
+CMD ["python", "app/server.py"]
